@@ -41,7 +41,7 @@ function fillDataTable(data, tableID) {
         for (let k of keys) {
             let td = createAnyElement("td");
             let input = createAnyElement("input", {
-                class: "form-contorl",
+                class: "form-control",
                 value: row[k],
                 name: k
             });
@@ -82,20 +82,19 @@ function createBtnGroup() {
 
 function delRow(btn) {
     let tr = btn.parentElement.parentElement.parentElement;
-    let id = tr.querySelector("td:first-child").innerHTML;
+    let data = getRowData(tr);
+    //let id = tr.querySelector("td:first-child").innerHTML;
     let fetchOptions = {
         method: "DELETE",
         mode: "cors",
         cache: "no-cache"
     };
 
-    fetch(`http://localhost:3000/users/${id}`, fetchOptions).then(
+    fetch(`http://localhost:3000/users/${data.id}`, fetchOptions).then(
         resp => resp.json(),
         err => console.error(err)
     ).then(
-        data => {
-            startGetUsers();
-        }
+        data => startGetUsers()
     );
 }
 
@@ -138,7 +137,7 @@ function createUser(btn) {
         body: JSON.stringify(data)
     };
 
-    fetch(`http://localhost:3000/users`, fetchOptions).then(
+    fetch("http://localhost:3000/users", fetchOptions).then(
         resp => resp.json(),
         err => console.error(err)
     ).then(
