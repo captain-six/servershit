@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "name": "Naloyi",
+      "email": "naloyi@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Moraxia",
+      "email": "moraxia@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Liryon",
+      "email": "liryon@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Zenia",
+      "email": "zenia@gmail.com",
+      "id": 4
+    }
+  ],
+  "comments": []
+}
